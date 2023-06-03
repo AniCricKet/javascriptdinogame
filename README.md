@@ -1,12 +1,11 @@
 # Dino Jump Game
 
-This is a simple browser-based game where a dinosaur jumps over cacti. The game is implemented using HTML, CSS, and JavaScript.
+This is a simple browser-based game where a dinosaur jumps over the cactus. The game is made using HTML, CSS, and JavaScript.
 
 ## Gameplay
 
-- The player controls the dinosaur character using the space bar on the keyboard.
-- Pressing the space bar makes the dinosaur jump.
-- The objective is to avoid colliding with the cacti.
+- The player controls the dinosaur character by clicking the jump button.
+- The objective is to avoid the dinosaur colliding with the cacti.
 - If the dinosaur collides with a cactus, the game ends, and an alert with the message "Game Over!" is shown.
 
 ## Getting Started
@@ -17,7 +16,7 @@ To run the game, follow these steps:
 
 2. Open the `index.html` file in a web browser.
 
-3. Use the space bar to make the dinosaur jump and try to avoid the cacti.
+3. Click the jump button to make the dinosaur jump and try to avoid the cacti.
 
 ## Code Overview
 
