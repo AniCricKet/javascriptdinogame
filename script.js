@@ -1,5 +1,6 @@
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
+const jumpButton = document.getElementById("jumpButton");
 
 function jump() {
   if (!dino.classList.contains("jump")) {
@@ -20,8 +21,6 @@ let isAlive = setInterval(function () {
   }
 }, 10);
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === " ") { // Check if the space bar is pressed
-    jump();
-  }
+jumpButton.addEventListener("click", function () {
+  jump();
 });
