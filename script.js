@@ -29,5 +29,6 @@ let isAlive = setInterval(function () {
     clearInterval(isAlive); // Stop the game loop
     dino.style.animation = "none"; // Remove the jump animation
     alert("Game Over!");
+    location.reload(); // Reload the page
   }
 }, 10);
