@@ -41,24 +41,18 @@ body {
   20% {
     top: 140px;
   }
-
   40% {
     top: 90px;
   }
-  
   50% {
     top: 80px;
   }
-
-
   60% {
     top: 90px;
   }
-
   80% {
     top: 140px;
   }
-
   100% {
     top: 145px;
   }
@@ -70,10 +64,8 @@ body {
   position: relative;
   top: 140px;
   left: 580px;
-
   background-image: url("img/cactus.png");
   background-size: 20px 30px;
-
   animation: block 2.5s infinite linear;
 }
 
@@ -81,7 +73,6 @@ body {
   0% {
     left: 580px;
   }
-
   100% {
     left: -20px;
   }
