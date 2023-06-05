@@ -60,7 +60,7 @@ body {
   }
 
   100% {
-    top: 170px;
+    top: 145px;
   }
 }
 
@@ -74,7 +74,7 @@ body {
   background-image: url("img/cactus.png");
   background-size: 20px 30px;
 
-  animation: block 5s infinite linear;
+  animation: block 2.5s infinite linear;
 }
 
 @keyframes block {
