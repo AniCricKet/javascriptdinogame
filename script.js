@@ -9,16 +9,12 @@ let score = 0; // Initialize the score to 0
 function jump() {
   // Check if the dinosaur is already jumping
   if (!dino.classList.contains("jump")) {
-    // Generate a random color
+    // Generate a random color and change the background color
     const randomColor = getRandomColor();
-
-    // Change the background color of the body
     document.body.style.backgroundColor = randomColor;
-
-    // Make the dinosaur jump by adding the "jump" class
+    // Make the dinosaur jump by adding the jump class
     dino.classList.add("jump");
-
-    // After 500 milliseconds, remove the "jump" class and restore the background color
+    // After 500 milliseconds, remove the jump class bringing the dino back to resting position
     setTimeout(function () {
       dino.classList.remove("jump");
     }, 500);
@@ -26,29 +22,16 @@ function jump() {
 }
 
 function getRandomColor() {
-  // Generate random values for red, green, and blue channels in the range of 150-255
+  // Generate random values for red, green, and blue channels between 150-255
   const red = Math.floor(Math.random() * 106) + 150;
   const green = Math.floor(Math.random() * 106) + 150;
   const blue = Math.floor(Math.random() * 106) + 150;
-
-  // Construct the color code using the generated values
+  // Makes the given numbers easy to be converted to RGB so it can be set as the background color
   const color = `rgb(${red}, ${green}, ${blue})`;
   return color;
 }
 
-
-// // Helper function to generate a random color
-// function getRandomColor() {
-//   const letters = "0123456789ABCDEF";
-//   let color = "#";
-//   for (let i = 0; i < 6; i++) {
-//     color += letters[Math.floor(Math.random() * 16)];
-//   }
-//   return color;
-// }
-
-
-// Function that handles the "Arrow Up" key press event
+// Function that makes it so that the up arrow key also makes the dino jump
 function handleKeyDown(event) {
   // Check if the pressed key is the "Arrow Up" key
   if (event.key === "ArrowUp") {
@@ -59,10 +42,8 @@ function handleKeyDown(event) {
 
 // Add a click event listener to the jump button, so when it's clicked, the jump function is called
 jumpButton.addEventListener("click", jump);
-
-// Add a keydown event listener to the document, so when any key is pressed, the handleKeyDown function is called
+// Add a keydown event listener to the document, so when any key is pressed, it checks if that key is the up arrow by calling the handleKeyDown function
 document.addEventListener("keydown", handleKeyDown);
-
 // Set up a continuous check to detect if the dinosaur collides with the cactus or if the cactus hits the left side of the screen
 let isAlive = setInterval(function () {
   // Get the vertical position of the dinosaur
@@ -76,21 +57,16 @@ let isAlive = setInterval(function () {
     scoreElement.textContent = score; // Update the score on the webpage
   }
 
-  // Check if the cactus is within a certain range of the dinosaur and if the dinosaur is at the appropriate height to collide
+  // Check if the cactus is within a certain range of the dinosaur to see if they are colliding
   if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
     // If there is a collision, stop the continuous check
     clearInterval(isAlive);
-
-    // Stop the dinosaur's jumping animation
+    // Stop the dinosaur's jumping animation and end the game
     dino.style.animation = "none";
-
-    // Show an alert with the message "Game Over!"
     alert("Game Over!");
-
-    // Reset the score to 0
+    // Reset the score to 0 and update it on the webpage
     score = 0;
-    scoreElement.textContent = score; // Update the score on the webpage
-
+    scoreElement.textContent = score;
     // Refresh the page to restart the game
     location.reload();
   }
