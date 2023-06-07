@@ -58,16 +58,21 @@ let isAlive = setInterval(function () {
   }
 
   // Check if the cactus is within a certain range of the dinosaur to see if they are colliding
-  if (cactusLeft < 20 && cactusLeft > 0 && dinoTop >= 160) {
+  if (cactusLeft < 20 && cactusLeft > 0 && dinoTop + 30 >= 145 && dinoTop <= 145 + 25) {
     // If there is a collision, stop the continuous check
     clearInterval(isAlive);
-    // Stop the dinosaur's jumping animation and end the game
+  
+    // Stop the dinosaur's jumping animation
     dino.style.animation = "none";
+  
+    // Show an alert with the message "Game Over!"
     alert("Game Over!");
-    // Reset the score to 0 and update it on the webpage
+  
+    // Reset the score to 0
     score = 0;
-    scoreElement.textContent = score;
+    scoreElement.textContent = score; // Update the score on the webpage
+  
     // Refresh the page to restart the game
     location.reload();
-  }
+  }  
 }, 10);
