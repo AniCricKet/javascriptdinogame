@@ -58,7 +58,7 @@ let isAlive = setInterval(function () {
   }
 
   // Check if the cactus is within a certain range of the dinosaur to see if they are colliding
-  if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
+  if (cactusLeft < 20 && cactusLeft > 0 && dinoTop >= 160) {
     // If there is a collision, stop the continuous check
     clearInterval(isAlive);
     // Stop the dinosaur's jumping animation and end the game
