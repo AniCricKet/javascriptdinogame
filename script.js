@@ -6,18 +6,47 @@ const scoreElement = document.getElementById("score");
 
 let score = 0; // Initialize the score to 0
 
-// Function that makes the dinosaur jump
 function jump() {
   // Check if the dinosaur is already jumping
   if (!dino.classList.contains("jump")) {
+    // Generate a random color
+    const randomColor = getRandomColor();
+
+    // Change the background color of the body
+    document.body.style.backgroundColor = randomColor;
+
     // Make the dinosaur jump by adding the "jump" class
     dino.classList.add("jump");
-    // After 500 milliseconds, remove the "jump" class to make the dinosaur come back down
+
+    // After 500 milliseconds, remove the "jump" class and restore the background color
     setTimeout(function () {
       dino.classList.remove("jump");
     }, 500);
   }
 }
+
+function getRandomColor() {
+  // Generate random values for red, green, and blue channels in the range of 150-255
+  const red = Math.floor(Math.random() * 106) + 150;
+  const green = Math.floor(Math.random() * 106) + 150;
+  const blue = Math.floor(Math.random() * 106) + 150;
+
+  // Construct the color code using the generated values
+  const color = `rgb(${red}, ${green}, ${blue})`;
+  return color;
+}
+
+
+// // Helper function to generate a random color
+// function getRandomColor() {
+//   const letters = "0123456789ABCDEF";
+//   let color = "#";
+//   for (let i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+// }
+
 
 // Function that handles the "Arrow Up" key press event
 function handleKeyDown(event) {

@@ -24,7 +24,7 @@ body {
 #dino {
   width: 30px;
   height: 30px;
-  background-image: url(img/trex.png);
+  background-image: url(img/trex2.png);
   background-size: 30px 30px;
   position: relative;
   top: 170px;
@@ -61,7 +61,7 @@ body {
   position: relative;
   top: 145px;
   left: 580px;
-  background-image: url("img/cactus.png");
+  background-image: url("img/cactus2.png");
   background-size: 20px 25px;
   animation: block 2.5s infinite linear;
 }
