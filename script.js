@@ -58,20 +58,17 @@ let isAlive = setInterval(function () {
   }
 
   // Check if the cactus is within a certain range of the dinosaur to see if they are colliding
+  // The condition checks if the cactus is within a certain range (cactusLeft < 20 && cactusLeft > 0) and if the dinosaur's vertical position overlaps 
+  // with the vertical range of the cactus (145 to 145 + 25). If the condition is true, that means there's a collision.
   if (cactusLeft < 20 && cactusLeft > 0 && dinoTop + 30 >= 145 && dinoTop <= 145 + 25) {
     // If there is a collision, stop the continuous check
     clearInterval(isAlive);
-  
-    // Stop the dinosaur's jumping animation
+    // Stop the dinosaur's jumping animation and end the game
     dino.style.animation = "none";
-  
-    // Show an alert with the message "Game Over!"
     alert("Game Over!");
-  
-    // Reset the score to 0
+    // Reset the score to 0 and update the webpage
     score = 0;
-    scoreElement.textContent = score; // Update the score on the webpage
-  
+    scoreElement.textContent = score;
     // Refresh the page to restart the game
     location.reload();
   }  
