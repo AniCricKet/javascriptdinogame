@@ -4,7 +4,8 @@ const cactus = document.getElementById("cactus");
 const jumpButton = document.getElementById("jumpButton");
 const scoreElement = document.getElementById("score");
 
-let score = 0; // Initialize the score to 0
+// Initialize the score to 0
+let score = 0;
 
 function jump() {
   // Check if the dinosaur is already jumping
@@ -51,7 +52,7 @@ let isAlive = setInterval(function () {
   // Get the horizontal position of the cactus
   let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
   // Check if the cactus hits the left side of the screen
-  if (cactusLeft < 0) {
+  if (cactusLeft == 0) {
     // If the dino jumps over the cactus it will increment the score
     score++;
     scoreElement.textContent = score; // Update the score on the webpage
@@ -65,7 +66,7 @@ let isAlive = setInterval(function () {
     clearInterval(isAlive);
     // Stop the dinosaur's jumping animation and end the game
     dino.style.animation = "none";
-    alert("Game Over!");
+    alert("Game Over! You scored " + score + " points!" );
     // Reset the score to 0 and update the webpage
     score = 0;
     scoreElement.textContent = score;
